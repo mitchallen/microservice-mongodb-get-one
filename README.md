@@ -158,6 +158,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.2 
+
+* cleaned up module dependencies
+
 #### Version 0.1.1 
 
 * updated music-get to use published module
