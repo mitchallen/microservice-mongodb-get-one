@@ -132,18 +132,6 @@ describe('mongodb microservice smoke test', function() {
             var server = obj.server;
             should.exist(server);
 
-            // console.log("TEST URL: " + testUrl);
-
-            var postOptions = {
-                name: testName,
-                version: testVersion,
-                verbose: verbose,
-                port: postPort,
-                prefix: testPrefix,
-                mongodb: testMongo,
-                collectionName: testCollectionName
-            };
-
             // GET
             request(testHost)
                 .get(testUrl + "/" + docId)

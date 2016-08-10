@@ -158,6 +158,10 @@ Add unit tests for any new or changed functionality. Lint and test your code.
 
 ## Version History
 
+#### Version 0.1.3 
+
+* updated code and test cases to return 404 for invalid or missing object ids
+
 #### Version 0.1.2 
 
 * cleaned up module dependencies

@@ -49,10 +49,20 @@ module.exports = function (spec, modCallback) {
             // path does not include prefix (set elsewhere)
             router.get( path, function (req, res) {
                 var docId = req.params.id;
+                // Must be called before used as a constructor (which will throw an error if invalid)
+                if( ! ObjectId.isValid(docId) ) 
+                {
+                    console.error("MongoID ObjectID is not valid: %s", docId);
+                    return res
+                            .status(404)
+                            .send(new Error());
+                }
                 var collection = db.collection(collectionName);
                 collection.findOne({"_id": new ObjectId(docId)}, function(err, doc) {
-                    if (err) {
-                        console.error(err);
+                    if (err || !doc) {
+                        if( err ) {
+                            console.error(err);
+                        }
                         res
                             .status(404)
                             .send(err);
