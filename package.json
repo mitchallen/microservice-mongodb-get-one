@@ -13,5 +13,14 @@
     "url": "https://bitbucket.org/mitchallen/microservice-mongodb-get-one.git"
   },
   "author": "Mitch Allen <npm@mitchallen.com> (http://mitchallen.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "@mitchallen/demand": "^0.1.2",
+    "@mitchallen/microservice-mongodb": "^0.1.3",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-shell": "^1.3.0",
+    "should": "^11.0.0",
+    "supertest": "^2.0.0"
+  }
 }
