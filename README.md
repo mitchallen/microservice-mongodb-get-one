@@ -81,7 +81,8 @@ Here is the code from the example folder: __examples/music-get/index.js__
 4. Execute the following in the second terminal window (all on one line) (assumes a Mac or Linux and that port 8005 is not busy). Substitute __{id}__ with an id from a music collection in your database. If you want to see a way to create data for testing, see the __examples/music-post__ folder in the git repo:
 
         curl -i -X GET http://localhost:8005/v1/music/{id}
-        
+     
+In a Web browser like Chrome you could also browse to the URL and see the JSON response in the browser window. Not all browsers display the JSON response.   
 
 * * *
 

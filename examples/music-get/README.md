@@ -30,6 +30,8 @@ At the command line, type the following replacing {id} with the id result from t
 
     curl -i -X GET http://localhost:8005/v1/music/{id}
 
+In a Web browser like Chrome you could also browse to the URL and see the JSON response in the browser window. Not all browsers display the JSON response.
+
 ### To stop the test app
 
 To stop the test app: in the original console window press __Ctrl-C__.
