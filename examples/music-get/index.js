@@ -16,9 +16,7 @@ var service = {
     collectionName: "music",
 };
 
-// TODO - replace with module once published
-// require('@mitchallen/microservice-mongodb-get-one')(service, function(err,obj) {
-require('../../index')(service, function(err,obj) {
+require('@mitchallen/microservice-mongodb-get-one')(service, function(err,obj) {
     if( err ) {
         console.log(err);
         throw new Error( err.message );
