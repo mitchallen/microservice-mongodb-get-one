@@ -24,7 +24,7 @@ Provides a way to retrieve a record from MongoDB via REST GET.
 
 ### Non-Secure Only
 
-Please note that this module is for NON-SECURE posts only. For ideas on how to create an SSL version see: [@mitchallen/microservice-ssl](https://www.npmjs.com/package/@mitchallen/microservice-ssl). You may also want to checkout [RichmondJS](https://www.npmjs.com/package/richmond).
+Please note that this module is for NON-SECURE get requests only. For ideas on how to create an SSL version see: [@mitchallen/microservice-ssl](https://www.npmjs.com/package/@mitchallen/microservice-ssl). You may also want to checkout [RichmondJS](https://www.npmjs.com/package/richmond).
 
 ### Define a Service Object
 
@@ -46,7 +46,7 @@ Here is the code from the example folder: __examples/music-get/index.js__
     "use strict";
     
     let demand = require('@mitchallen/demand');
-    let prefix = process.env.MUSIC_POST_API_VERSION || '/v1';
+    let prefix = process.env.MUSIC_GET_API_VERSION || '/v1';
     
     var service = {
     
@@ -54,7 +54,7 @@ Here is the code from the example folder: __examples/music-get/index.js__
         version: require("./package").version,
         verbose: true,
         prefix: prefix,
-        port: process.env.MUSIC_POST_PORT || 8005,
+        port: process.env.MUSIC_GET_PORT || 8005,
         mongodb: {
             uri: process.env.TEST_MONGO_URI || 'mongodb://localhost/test',
         },
@@ -78,26 +78,10 @@ Here is the code from the example folder: __examples/music-get/index.js__
 
         node index.js
         
-4. Open up a second terminal window and create a file called __data.json__ with the following contents:
+4. Execute the following in the second terminal window (all on one line) (assumes a Mac or Linux and that port 8005 is not busy). Substitute __{id}__ with an id from a music collection in your database. If you want to see a way to create data for testing, see the __examples/music-post__ folder in the git repo:
 
-        { 
-            "CatalogID": "b123",
-            "Artist":"The Beatles",
-            "SongTitle":"Abbey Road",
-            "Album": "Octopus's Garden"
-        }        
-
-5. Execute the following in the second terminal window (all on one line) (assumes a Mac or Linux and that port 8004 is not busy):
-
-        curl -i -X POST -H "Content-Type: application/json" -d @data.json http://localhost:8004/v1/music
+        curl -i -X GET http://localhost:8005/v1/music/{id}
         
-6. Go to your MongoDB console at look at the contents of the music collection. In the MongoDB shell, verify with: 
-
-        db.music.find()
-        
-7. Based on the value returned, again in the second terminal window, type this:
-
-        TODO: curl GET command
 
 * * *
 
@@ -145,7 +129,8 @@ Here is an example of how to create it, then use the server return value to clos
 
 You can find working examples in the examples folder of the git repo.
 
-* __examples / music-get__ - demos how to post a record to MongoDB. See that folders __README__ for more info.
+* __examples / music-get__ - demos how to get a record from MongoDB. See that folders __README__ for more info.
+* __examples / music-post__ - demos how to post a record to MongoDB, which is useful for testing the GET command. See that folders __README__ for more info.
   
 * * *
 
