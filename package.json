@@ -1,0 +1,17 @@
+{
+  "name": "@mitchallen/microservice-mongodb-get-one",
+  "version": "0.1.0",
+  "description": "microservice for getting one record from MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --timeout 20000",
+    "//": "To use: npm run test-nodemon (assumes global location of mocha)",
+    "test-nodemon": "nodemon /usr/local/bin/mocha --timeout 5000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/mitchallen/microservice-mongodb-get-one.git"
+  },
+  "author": "Mitch Allen <npm@mitchallen.com> (http://mitchallen.com)",
+  "license": "ISC"
+}
