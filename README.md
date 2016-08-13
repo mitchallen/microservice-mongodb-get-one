@@ -146,6 +146,7 @@ To test, go to the root folder and type (sans __$__):
 ## Repo(s)
 
 * [bitbucket.org/mitchallen/microservice-mongodb-get-one.git](https://bitbucket.org/mitchallen/microservice-mongodb-get-one.git)
+* [github.com/mitchallen/microservice-mongodb-get-one.git](https://github.com/mitchallen/microservice-mongodb-get-one.git)
 
 * * *
 
